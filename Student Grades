@@ -1,0 +1,66 @@
+import java.util.Scanner;
+class Rank
+{
+  public static void main(String[] args)
+  {
+    Scanner sc= new Scanner(System.in);
+    System.out.println("Enter no.of students:");
+	int stu=sc.nextInt();
+	System.out.println("enter subjects:");
+	int mark=sc.nextInt();
+    String[] student=new String[stu];
+	int[][] grade=new int[stu][mark];
+	for(int i=0;i<stu;i++)
+	{
+	  System.out.print("Enter name:");
+	   sc.nextLine();
+	   student[i]=sc.nextLine();
+	 
+	 
+		 
+	   for(int j=0;j<mark;j++)
+	   {
+		   
+	     System.out.println("Total Marks:");
+	      grade[i][j]=sc.nextInt();
+	   }
+	 }
+	
+	 for (int i = 0; i < stu; i++)
+		 {
+            int total = 0;
+            for (int j = 0; j < mark; j++)
+			{
+                total += grade[i][j];
+            }
+            float avg = total / (float) mark;
+            char grades;
+
+            if (avg >= 90) {
+                grades = 'A';
+            } 
+			else if (avg >= 80) 
+			{
+                grades = 'B';
+            } 
+			else if (avg >= 60) 
+			{
+                grades = 'C';
+            } 
+			else if (avg >= 35) 
+			{
+                grades = 'D';
+            } 
+			else 
+			{
+                grades = 'F';
+            }
+
+            
+            System.out.println("Student Name: " + student[i]+" Total Marks: " + total+" Average: " + avg+" Grade: " + grades);
+            
+        }
+        
+        
+    }
+}
